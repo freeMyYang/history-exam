@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #title {
+            margin-bottom: 20px;
+        }
+        #content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            width: 100%;
+        }
+        #left-column, #right-column {
+            flex-basis: 100%;
+        }
+        .time-text {
+            font-size: 72px;
+        }
+        .details-text {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+    <title>历史考试</title>
+</head>
+<body>
+    <div id="container">
+        <div id="title">
+            <h2>英德市实验中学2023-2024学年（下）八年级历史阶段检测</h2>
+            <div id="time" class="time-text"></div>
+            <a>考试铃声已实现自动，当然手闲也可以手动</a>
+        </div>
+        <div id="content">
+            <div id="left-column">
+                <div id="exam">
+                    <p class="details-text">科目：历史<br>时间：20:25-20:55<br>试卷： 1 张 4 页<br>答题卡： 1 张 1 页</p>
+                </div>
+            </div>
+            <div id="right-column">
+                <div id="text">
+                    <p class="details-text">能得的分<br>分分必争<br>会做的题<br>题题都做</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div style="display: flex; justify-content: space-around;">
+            <div>
+                <h3>分发试卷</h3>
+                <audio controls><source src="/Gai/1.mp3"></audio>
+            </div>
+            <div>
+                <h3>开始考试</h3>
+                <audio controls><source src="/Gai/2.mp3"></audio>
+            </div>
+            <div>
+                <h3>考试结束</h3>
+                <audio controls><source src="/Gai/3.mp3"></audio>
+            </div>
+        </div><br>
+        <div style="display: flex; justify-content: space-around;">
+            <div>
+                <h3>分发答题卡</h3>
+                <audio controls><source src="/Gai/01.mp3"></audio>
+            </div>
+            <div>
+                <h3>开封试卷袋</h3>
+                <audio controls><source src="/Gai/02.mp3"></audio>
+            </div>
+            <div>
+                <h3>15分钟</h3>
+                <audio controls><source src="/Gai/03.mp3"></audio>
+            </div>
+        </div>
+        <p style="text-align: center;">Copyright © 2024 Yang. All rights reserved. Powered by Yang Studio.</p>
+        
+        
+
+    </footer>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var timeString = padZero(hours) + ":" + padZero(minutes) + ":" + padZero(seconds);
+            document.getElementById("time").innerText = timeString;
+        }
+
+        function padZero(num) {
+            return (num < 10 ? '0' : '') + num;
+        }
+
+
+        updateTime();
+        setInterval(updateTime, 1000);
+
+    </script>
+</body>
+</html>
